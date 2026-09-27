@@ -1,7 +1,7 @@
 baseURL = 'https://fase29.github.io/'
 locale = 'en-us'
 title = 'Fabio Venturi'
-# Keep /DevOpsOdyssey/ and /myCV/ URLs case-sensitive as written.
+# Keep /ProstMortem/ and /myCV/ URLs case-sensitive as written.
 disablePathToLower = true
 
 # Only plain pages are needed for now (home + CV).
@@ -22,9 +22,9 @@ disableKinds = ['taxonomy', 'term', 'section', 'rss', 'sitemap']
   # Cards on the main page, rendered in this order.
   # badge: short text shown in the icon tile; color: tile accent (CSS color).
   [[params.links]]
-    title = 'DevOps Odyssey'
+    title = 'Prost 🍻 Mortem'
     description = 'My blog about infrastructure, automation and the lessons learned along the way.'
-    url = '/DevOpsOdyssey/'
+    url = '/ProstMortem/'
     badge = 'Blog'
     color = '#e8590c'
 

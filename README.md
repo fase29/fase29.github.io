@@ -10,4 +10,4 @@ built with [Hugo](https://gohugo.io) and deployed to GitHub Pages by
 
 Preview locally with `hugo server` and open http://localhost:1313.
 
-The blog lives in its own repo: [fase29/DevOpsOdyssey](https://github.com/fase29/DevOpsOdyssey).
+The blog lives in its own repo: [fase29/ProstMortem](https://github.com/fase29/ProstMortem).

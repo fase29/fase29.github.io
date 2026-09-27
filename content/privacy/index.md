@@ -1,10 +1,10 @@
 +++
 title = 'Privacy'
-description = 'Privacy notice for fase29.github.io and the DevOps Odyssey blog.'
+description = 'Privacy notice for fase29.github.io and the Prost Mortem blog.'
 +++
 
 This notice covers [fase29.github.io](https://fase29.github.io/), including the online
-CV, and the [DevOps Odyssey](https://fase29.github.io/DevOpsOdyssey/) blog.
+CV, and the [Prost Mortem](https://fase29.github.io/ProstMortem/) blog.
 
 ## Short version
 
@@ -44,7 +44,8 @@ GoatCounter sets no cookies and does not store your IP address or anything else 
 browser. To avoid counting the same visitor twice, it keeps your IP address and browser
 details in memory only, linked to a random ID, for up to eight hours; they are never
 written to its database. The statistics I see are aggregated and do not identify
-individual visitors.
+individual visitors. The visitor counter on the main page loads only the total number of
+visits from `fase29.goatcounter.com`.
 
 The legal basis is my legitimate interest in understanding how these sites are used
 (Art. 6(1)(f) GDPR). For details, see the

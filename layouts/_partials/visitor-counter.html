@@ -1,0 +1,30 @@
+{{/* Late-'90s style hit counter showing GoatCounter's site total (all pages,
+     blog included). Needs "Allow adding visitor counts on your website" in the
+     GoatCounter site settings. Stays hidden if the count can't be loaded (setting
+     off, blocked by a content blocker). Local previews show a demo number. */}}
+{{ with site.Params.goatcounter }}
+<div class="hit-counter" id="hit-counter" {{ if hugo.IsProduction }}hidden{{ end }}>
+  <div class="odometer" id="hit-counter-digits" aria-live="polite">
+    {{ if not hugo.IsProduction }}{{ range split "001337" "" }}<span>{{ . }}</span>{{ end }}{{ end }}
+  </div>
+  <p>visitors since 2026</p>
+</div>
+{{ if hugo.IsProduction }}
+<script>
+  fetch({{ replaceRE "/count$" "/counter/TOTAL.json" . }})
+    .then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(d => {
+      const n = String(d.count).replace(/\D/g, '').padStart(6, '0');
+      const box = document.getElementById('hit-counter-digits');
+      box.setAttribute('aria-label', Number(n) + ' visitors');
+      box.replaceChildren(...[...n].map(c => {
+        const s = document.createElement('span');
+        s.textContent = c;
+        return s;
+      }));
+      document.getElementById('hit-counter').hidden = false;
+    })
+    .catch(() => {});
+</script>
+{{ end }}
+{{ end }}
