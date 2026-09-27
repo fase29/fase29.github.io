@@ -1,0 +1,60 @@
+baseURL = 'https://fase29.github.io/'
+locale = 'en-us'
+title = 'Fabio Venturi'
+# Keep /DevOpsOdyssey/ and /myCV/ URLs case-sensitive as written.
+disablePathToLower = true
+
+# Only plain pages are needed for now (home + CV).
+disableKinds = ['taxonomy', 'term', 'section', 'rss', 'sitemap']
+
+[params]
+  # GoatCounter endpoint (one account for both sites). Empty = no analytics.
+  goatcounter = 'https://fase29.goatcounter.com/count'
+  name = 'Fabio Venturi'
+  role = 'DevOps Engineer'
+  tagline = 'Automating the boring parts, one pipeline at a time.'
+  description = 'Personal page of Fabio Venturi — DevOps engineer. Blog, CV and where to find me.'
+  # Initials shown in the avatar circle. Drop a static/avatar.jpg and set
+  # avatar = 'avatar.jpg' to use a photo instead.
+  initials = 'FV'
+  avatar = ''
+
+  # Cards on the main page, rendered in this order.
+  # badge: short text shown in the icon tile; color: tile accent (CSS color).
+  [[params.links]]
+    title = 'DevOps Odyssey'
+    description = 'My blog about infrastructure, automation and the lessons learned along the way.'
+    url = '/DevOpsOdyssey/'
+    badge = 'Blog'
+    color = '#e8590c'
+
+  [[params.links]]
+    title = 'Curriculum Vitae'
+    description = 'Experience, skills and projects — the online version of my CV.'
+    url = '/myCV/'
+    badge = 'CV'
+    color = '#1c7ed6'
+
+  [[params.links]]
+    title = 'LinkedIn'
+    description = 'Connect with me professionally.'
+    url = 'https://www.linkedin.com/in/fabio-venturi-a3baa714/'
+    badge = 'in'
+    color = '#0a66c2'
+    external = true
+
+  [[params.links]]
+    title = 'Xing'
+    description = 'My profile on Xing.'
+    url = 'https://www.xing.com/profile/Fabio_Venturi'
+    badge = 'X'
+    color = '#006567'
+    external = true
+
+  [[params.links]]
+    title = 'GitHub'
+    description = 'Code, experiments and the source of this site.'
+    url = 'https://github.com/fase29'
+    badge = 'GH'
+    color = '#6e5494'
+    external = true

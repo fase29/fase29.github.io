@@ -1,0 +1,130 @@
+# Content of the online CV (/myCV/), converted from
+# ~/Documents/CV/OLD_CV_EXPORT/latex/cv.tex. Strings are rendered as Markdown.
+name: Fabio Venturi
+headline: DevOps / Cloud Infrastructure Engineer
+location: München, Germany
+
+# Shown under the location as "Connect with me: LinkedIn · Xing".
+# Remove an entry to hide it.
+connect_label: Connect with me
+contact:
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/fabio-venturi-a3baa714/
+  - label: Xing
+    url: https://www.xing.com/profile/Fabio_Venturi
+
+# A "Download PDF" button appears only if this file exists in static/.
+pdf: myCV/CV_Fabio_Venturi.pdf
+
+profile: >-
+  DevOps and Cloud Infrastructure Engineer with 20+ years in mission-critical Linux
+  environments, the last several building and operating cloud-native platforms on
+  AWS. RHCE-certified, with deep roots in high-availability clustering, shared storage and
+  networking, now delivering Infrastructure as Code, Kubernetes and GitOps. I own the full
+  path from cloud infrastructure to production delivery, working closely and communicating
+  clearly with development teams as my internal customers, and bringing analytical, creative
+  problem-solving to reliability, automation and reducing toil. A dependable team player who
+  designs for the day things go wrong.
+
+skills:
+  - category: Cloud & IaC
+    items: AWS (EKS, EC2, VPC, IAM, security groups, RDS PostgreSQL, DocumentDB, S3, Route53, KMS), Google Cloud (IAM, VPC firewall rules), Terraform (reusable modules, multi-environment)
+  - category: Containers & Orchestration
+    items: Kubernetes (EKS, on-prem; CNI, CSI, network policies, RBAC), Docker (multi-stage builds), Helm, Kustomize, Karpenter, KEDA
+  - category: CI/CD & GitOps
+    items: GitHub Actions, self-hosted runners, ArgoCD, TeamCity; image security scanning (Grype, Trivy)
+  - category: Configuration & Automation
+    items: Ansible (roles, playbooks, Vault), Bash, Python
+  - category: Observability
+    items: Prometheus, Grafana, Loki, Nagios, Elastic Stack (Elasticsearch, Kibana, LogStash, Filebeat, Metricbeat)
+  - category: Data & Messaging
+    items: PostgreSQL, MySQL, MongoDB, Elasticsearch (incl. semantic-search clusters), Kafka
+  - category: Security & Access
+    items: HashiCorp Vault, certificate management, OAuth/SSO (Keycloak, oauth-proxy), systems hardening
+  - category: OS & Virtualization
+    items: RHEL (4–7), Debian (8–13), Digital UNIX/Tru64, VMware vSphere/ESX, Hyper-V (SCVMM), Citrix XenServer, Citrix NetScaler
+  - category: High Availability & Storage
+    items: Red Hat Cluster Suite, GFS2/OCFS2, SAN multipath-IO, HAProxy, load balancing
+
+experience:
+  - title: DevOps / Cloud Infrastructure Engineer
+    company: B2B e-procurement platform
+    location: München, Germany
+    dates: Jan 2022 – Present
+    points:
+      - "Build and operate a cloud-native platform on AWS, defined as Infrastructure as Code with Terraform: reusable modules and clean separation of production and non-production environments (EKS, VPC, RDS PostgreSQL, DocumentDB, S3, Route53, KMS)."
+      - Run workloads on EKS with Helm, Kustomize and ArgoCD, using Git as the single source of truth (GitOps) for every deployment.
+      - Automate cluster capacity with Karpenter (node consolidation and spot/on-demand NodePools for cost efficiency) and event-driven pod autoscaling with KEDA (Kafka consumer-lag and Prometheus/nginx-connection scalers).
+      - "Set up and maintain each service's path to production for the development teams: GitHub Actions pipelines, Helm charts, Kustomize manifests and ArgoCD applications, all authored declaratively in YAML, with releases promoted from DEV to STG to PROD."
+      - Harden CI/CD with self-hosted runners and container image security scanning (Grype, Trivy).
+      - Implement observability across the stack with Prometheus, Grafana and Loki; manage secrets and access with Ansible Vault, HashiCorp Vault and OAuth/SSO (Keycloak, oauth-proxy).
+      - Define the key service indicators and alerting thresholds tracked in Prometheus and Grafana to surface reliability regressions early.
+      - Respond to production incidents (triage, diagnose and resolve) and, collaboratively or autonomously, produce documentation, runbooks and post-mortem analyses.
+      - "Operate production data and messaging services: MongoDB, Elasticsearch and Kafka."
+      - Kept the previous revenue-generating platform running and monitored throughout the multi-year transition to the new architecture.
+
+  - title: System Architect
+    company: B2B e-procurement platform
+    location: München, Germany
+    dates: Jan 2019 – Jan 2022
+    points:
+      - "Managed virtual infrastructure across two IaaS providers: Hyper-V via SCVMM and VMware vSphere."
+      - "Provisioned and operated VMs for a wide range of services: Apache HTTP, Tomcat, databases, on-prem Kubernetes, Bind9 DNS and HAProxy load balancing."
+      - Finalized and standardized VM configuration with Ansible.
+      - Built infrastructure and application monitoring with Nagios, including custom dashboards and custom checks for systems, services and business KPIs.
+      - Centralized logs and metrics in Elasticsearch using Filebeat and Metricbeat, with custom Kibana dashboards for visibility.
+      - "First DevOps work: extended existing TeamCity CI, building a pipeline to trigger builds and tests on Bitbucket pull-request creation and merge."
+
+  - title: Red Hat Enterprise Linux System Engineer
+    company: National power-grid operator (TSO)
+    location: Rome, Italy
+    dates: May 2011 – Dec 2018
+    points:
+      - Owned the RHEL 6/7 lifecycle (clustered and standalone) for the national transmission system operator, where downtime was not an option.
+      - Ran high-availability clusters (Red Hat Cluster Suite / HA Add-on / Resilient Storage) and GFS2/OCFS2 shared filesystems; SAN multipath-IO setup and performance tuning.
+      - Maintained Digital UNIX/Tru64 on AlphaServer; load balancing with Citrix NetScaler; virtualization with Citrix XenServer.
+      - Patch management with Spacewalk; configuration management with Ansible; automation and monitoring in Bash and Python; systems hardening and Kickstart unattended installs.
+      - Physical installation and setup of HP BladeSystem and Dell PowerEdge.
+
+  - title: Red Hat Enterprise Linux System Administrator
+    company: Public administration
+    location: Rome, Italy
+    dates: Jun 2008 – Apr 2011
+    points:
+      - RHEL 4/5 lifecycle with Red Hat Cluster Suite / HA Add-on; Apache HTTP, Tomcat and JBoss; PostgreSQL and MySQL.
+      - Fibre Channel and iSCSI SAN setup, multipath-IO and EMC PowerPath tuning; shared disks with OCFS/OCFS2.
+      - Samba/NFS file sharing, Squid proxy with Active Directory (NTLM) auth, CVS/SVN over SSH with Kerberos; Linux/Windows integration.
+      - VMware ESX 3.5 lifecycle; automation and monitoring in Bash and Python.
+      - Physical installation and setup of HP BladeSystem and Fujitsu Siemens PRIMERGY.
+
+  - title: Linux and Windows System Administrator
+    company: Various clients (public administration, sport, aeronavigation)
+    location: Rome, Italy
+    dates: Jan 2006 – May 2008
+    points:
+      - Administered and hardened Linux and Windows Server 2000 systems for public-sector and private clients, including performance tuning, troubleshooting and server-fault resolution.
+      - "Operated core network services: Bind9 DNS, Postfix/Sendmail mail, and Samba file/print sharing integrated with Active Directory (user and host management)."
+      - Secured hosts with iptables (TCP/IP) filtering, set up Nagios monitoring, and automated routine administration with Bash scripting.
+
+earlier:
+  - dates: 2001 – 2005
+    text: Junior Linux Administrator, Junior Java developer, office network device setup, first-level helpdesk, Active Directory management.
+  - dates: 1998 – 2000
+    text: CAD drafter and building surveyor; technical drawings for building development and cutting-list creation for marble cladding.
+
+certifications:
+  - Red Hat Certified Engineer (RHCE) – Red Hat (2010)
+  - Novell Certified Linux Administrator (Novell CLA) – Novell (2010)
+  - ITIL v3 Foundation – BCS/ISEB (2009)
+  - LPIC-1 – Linux Professional Institute (2008)
+  - Web Application Architectures – Coursera; Web Development on Google App Engine – Udacity
+
+education:
+  - degree: Bachelor's Degree in Computer Engineering (Ingegneria Informatica)
+    school: Università Telematica Guglielmo Marconi, Rome
+    year: "2026"
+
+languages:
+  - Italian (native)
+  - English (professional working proficiency)
+  - German (basic, A2)

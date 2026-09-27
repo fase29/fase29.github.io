@@ -1,0 +1,5 @@
+{{/* GoatCounter: cookieless visitor stats. Only in production builds, so local
+     `hugo server` previews don't show up in the dashboard. */}}
+{{ with site.Params.goatcounter }}{{ if hugo.IsProduction }}
+<script data-goatcounter="{{ . }}" async src="https://gc.zgo.at/count.js"></script>
+{{ end }}{{ end }}

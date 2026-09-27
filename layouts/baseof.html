@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="{{ site.Language.Locale | default "en" }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{ $title := cond .IsHome (printf "%s · %s" site.Params.name site.Params.role) (printf "%s · %s" .Title site.Params.name) }}
+  {{ $desc := .Description | default site.Params.description }}
+  <title>{{ $title }}</title>
+  <meta name="description" content="{{ $desc }}">
+  <meta property="og:title" content="{{ $title }}">
+  <meta property="og:description" content="{{ $desc }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta name="color-scheme" content="light dark">
+  {{ with resources.Get "css/main.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
+  {{ end }}
+  {{ partial "analytics.html" . }}
+</head>
+<body>
+  {{ block "main" . }}{{ end }}
+</body>
+</html>

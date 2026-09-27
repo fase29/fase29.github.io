@@ -1,0 +1,16 @@
+{{ define "main" }}
+<main class="page doc">
+  <nav class="topbar">
+    <a href="{{ "/" | relURL }}" class="back">← Home</a>
+  </nav>
+
+  <article>
+    <h1>{{ .Title }}</h1>
+    <div class="prose">
+      {{ .Content }}
+    </div>
+  </article>
+
+  {{ partial "footer.html" . }}
+</main>
+{{ end }}

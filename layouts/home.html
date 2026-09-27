@@ -1,0 +1,34 @@
+{{ define "main" }}
+<main class="page">
+  <header class="hero">
+    <div class="avatar" aria-hidden="true">
+      {{ with site.Params.avatar }}
+      <img src="{{ . | relURL }}" alt="">
+      {{ else }}
+      <span>{{ site.Params.initials }}</span>
+      {{ end }}
+    </div>
+    <p class="prompt"><span class="prompt-sign">$</span> whoami</p>
+    <h1>{{ site.Params.name }}</h1>
+    <p class="role">{{ site.Params.role }}</p>
+    {{ with site.Params.tagline }}<p class="tagline">{{ . }}</p>{{ end }}
+  </header>
+
+  <nav class="links" aria-label="Links">
+    {{ range site.Params.links }}
+    <a class="card" href="{{ if .external }}{{ .url }}{{ else }}{{ .url | relURL }}{{ end }}"
+       {{ if .external }}target="_blank" rel="noopener me"{{ end }}
+       style="--accent: {{ .color | default "#868e96" | safeCSS }}">
+      <span class="badge">{{ .badge }}</span>
+      <span class="card-body">
+        <span class="card-title">{{ .title }}</span>
+        <span class="card-desc">{{ .description }}</span>
+      </span>
+      <span class="arrow" aria-hidden="true">{{ if .external }}↗{{ else }}→{{ end }}</span>
+    </a>
+    {{ end }}
+  </nav>
+
+  {{ partial "footer.html" . }}
+</main>
+{{ end }}

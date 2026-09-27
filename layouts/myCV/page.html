@@ -1,0 +1,90 @@
+{{ define "main" }}
+{{ $cv := hugo.Data.cv }}
+<main class="page cv">
+  <nav class="topbar">
+    <a href="{{ "/" | relURL }}" class="back">← Home</a>
+    {{ with $cv.pdf }}{{ if fileExists (printf "static/%s" .) }}
+    <a href="{{ . | relURL }}" class="button" download>Download PDF</a>
+    {{ end }}{{ end }}
+  </nav>
+
+  <header class="cv-header">
+    <h1>{{ $cv.name }}</h1>
+    <p class="role">{{ $cv.headline }}</p>
+    {{ with $cv.location }}<p class="location">{{ . }}</p>{{ end }}
+    {{ with $cv.contact }}
+    <p class="contact">
+      {{ $cv.connect_label | default "Connect with me" }}:
+      {{ range $i, $c := . }}{{ if $i }} · {{ end }}<a href="{{ $c.url }}" target="_blank" rel="noopener me">{{ $c.label }}</a>{{ end }}
+    </p>
+    {{ end }}
+  </header>
+
+  <section>
+    <h2>Profile</h2>
+    <p>{{ $cv.profile | markdownify }}</p>
+  </section>
+
+  <section>
+    <h2>Technical Skills</h2>
+    <dl class="skills">
+      {{ range $cv.skills }}
+      <div>
+        <dt>{{ .category }}</dt>
+        <dd>{{ .items | markdownify }}</dd>
+      </div>
+      {{ end }}
+    </dl>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    {{ range $cv.experience }}
+    <article class="job">
+      <div class="job-head">
+        <h3>{{ .title }}</h3>
+        <span class="dates">{{ .dates }}</span>
+      </div>
+      <div class="job-sub">
+        <span>{{ .company }}</span>
+        <span>{{ .location }}</span>
+      </div>
+      <ul>
+        {{ range .points }}<li>{{ . | markdownify }}</li>{{ end }}
+      </ul>
+    </article>
+    {{ end }}
+    {{ with $cv.earlier }}
+    <div class="earlier">
+      <h3>Earlier</h3>
+      {{ range . }}<p><span class="dates">{{ .dates }}</span> {{ .text | markdownify }}</p>{{ end }}
+    </div>
+    {{ end }}
+  </section>
+
+  <section>
+    <h2>Certifications</h2>
+    <ul>
+      {{ range $cv.certifications }}<li>{{ . | markdownify }}</li>{{ end }}
+    </ul>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    {{ range $cv.education }}
+    <div class="job-head">
+      <h3>{{ .degree }}</h3>
+      <span class="dates">{{ .year }}</span>
+    </div>
+    <div class="job-sub"><span>{{ .school }}</span></div>
+    {{ end }}
+  </section>
+
+  <section>
+    <h2>Languages</h2>
+    <p>{{ delimit $cv.languages " · " }}</p>
+  </section>
+
+  {{ partial "footer.html" . }}
+</main>
+{{ end }}
