@@ -13,6 +13,8 @@ enableRobotsTXT = true
 enableGitInfo = true
 
 [params]
+  # Google Search Console ownership check (HTML tag method).
+  googleSiteVerification = 'OKSywAXQmCBTDpSwG4rChYzuymMcJcBfQjNq1qoy6lM'
   # Listed in robots.txt next to this site's own sitemap.
   extraSitemaps = ['https://fase29.github.io/ProstMortem/sitemap.xml']
   # GoatCounter endpoint (one account for both sites). Empty = no analytics.

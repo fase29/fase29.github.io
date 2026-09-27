@@ -1,5 +1,6 @@
 {{/* Canonical URL, social preview tags and structured data (JSON-LD). */}}
 <link rel="canonical" href="{{ .Permalink }}">
+{{ with site.Params.googleSiteVerification }}<meta name="google-site-verification" content="{{ . }}">{{ end }}
 <meta property="og:site_name" content="{{ site.Params.name }}">
 <meta property="og:type" content="{{ if .IsHome }}profile{{ else }}website{{ end }}">
 <meta property="og:image" content="{{ "og-image.png" | absURL }}">
