@@ -8,6 +8,3 @@ built with [Hugo](https://gohugo.io) and deployed to GitHub Pages by
 - CV content: `data/cv.yaml`
 - Privacy notice: `content/privacy/index.md`
 
-Preview locally with `hugo server` and open http://localhost:1313.
-
-The blog lives in its own repo: [fase29/ProstMortem](https://github.com/fase29/ProstMortem).
