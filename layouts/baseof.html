@@ -14,6 +14,7 @@
   {{ with resources.Get "css/main.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
   {{ end }}
+  {{ partial "seo.html" . }}
   {{ partial "analytics.html" . }}
 </head>
 <body>

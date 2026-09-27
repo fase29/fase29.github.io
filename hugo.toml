@@ -4,10 +4,17 @@ title = 'Fabio Venturi'
 # Keep /ProstMortem/ and /myCV/ URLs case-sensitive as written.
 disablePathToLower = true
 
-# Only plain pages are needed for now (home + CV).
-disableKinds = ['taxonomy', 'term', 'section', 'rss', 'sitemap']
+# Only plain pages are needed for now (home + CV + privacy).
+disableKinds = ['taxonomy', 'term', 'section', 'rss']
+
+# robots.txt lives at the domain root, so this site serves it for the blog too.
+enableRobotsTXT = true
+# Last-modified dates (sitemap) come from git history.
+enableGitInfo = true
 
 [params]
+  # Listed in robots.txt next to this site's own sitemap.
+  extraSitemaps = ['https://fase29.github.io/ProstMortem/sitemap.xml']
   # GoatCounter endpoint (one account for both sites). Empty = no analytics.
   goatcounter = 'https://fase29.goatcounter.com/count'
   name = 'Fabio Venturi'
